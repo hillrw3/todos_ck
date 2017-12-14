@@ -13,12 +13,18 @@
  *= require_tree .
  *= require_self
  */
+@import url('https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed');
 
 .container {
-    display:flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
+
+  * {
+    font-family: 'Barlow Semi Condensed', sans-serif;
+  }
 }
 
 .panel {
-    width: 20rem;
+  width: 100%;
+  max-width: 25rem;
 }
