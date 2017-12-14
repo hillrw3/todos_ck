@@ -1,8 +1,14 @@
 class TodosController < ApplicationController
   skip_before_action :verify_authenticity_token
 
+  def app
+    @todos = Todo.order(:created_at)
+    render action: :index
+  end
+
   def index
     @todos = Todo.order(:created_at)
+    render json: @todos.as_json
   end
 
   def create
