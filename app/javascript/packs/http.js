@@ -28,5 +28,6 @@ export default class Http {
         "Content-Type": "application/json"
       }
     })
+      .then((data) => data.json())
   }
 }

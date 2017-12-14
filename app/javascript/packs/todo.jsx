@@ -15,11 +15,10 @@ export class Todo extends React.Component {
     const completeClass = todo.complete ? "complete" : null
     return (
       <div className={`todo ${completeClass}`}>
-        <input
-          type="checkbox"
-          defaultChecked={todo.complete}
-          onClick={this.toggleStatus}
-        />
+        <label className="control control--checkbox" onClick={this.toggleStatus}>
+          <input type="checkbox" defaultChecked={todo.complete}/>
+          <div className="control__indicator"/>
+        </label>
         <input
           className="todo-field"
           defaultValue={todo.title}
@@ -44,14 +43,11 @@ export class Todo extends React.Component {
     const {todo} = this.state
     const complete = !todo.complete
     const requestBody = {todo: {complete}}
-    this.setState({
-      todo: {
-        ...todo,
-        complete: complete
-      }
-    })
 
     Http.put(`/todos/${todo.id}`, requestBody)
+      .then(todo => {
+        this.setState({todo})
+      })
   }
 
   deleteTodo() {

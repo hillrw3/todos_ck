@@ -41,9 +41,9 @@ export default class Todos extends React.PureComponent {
 
   deleteTodo(todo) {
     Http.delete(`/todos/${todo.id}`)
-      .then((removedTodo) => {
+      .then((deletedTodo) => {
         const {todos} = this.state
-        const newTodos = todos.filter(t => t !== todo)
+        const newTodos = todos.filter(t => t.id !== deletedTodo.id)
         this.setState({todos: newTodos})
       })
   }

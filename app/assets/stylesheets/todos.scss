@@ -10,6 +10,7 @@
   text-align: right;
   margin-bottom: .5rem;
   width:100%;
+  position: relative;
 
   * {
     font-size: 1rem;
@@ -26,7 +27,7 @@
 
     &:focus {
       outline: none;
-      border-bottom: 2px solid $yellow;
+      border-color: $yellow;
 
     }
   }
@@ -41,10 +42,13 @@
   }
 
   &.complete {
-    .todo-field {
+    * {
       color: $lightgrey;
+      border-color: $lightgrey;
+    }
+
+    .todo-field {
       text-decoration: line-through;
-      border-bottom: 2px solid $lightgrey;
     }
   }
 }
