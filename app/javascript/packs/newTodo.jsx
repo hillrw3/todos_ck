@@ -12,6 +12,7 @@ export class NewTodo extends React.Component {
       <div className="todo new-todo">
         <input
           className="todo-field"
+          placeholder="New Todo"
           ref={el => this.titleInput = el}
         />
         <button className="todo-create" onClick={this.submitTodo}>+</button>
