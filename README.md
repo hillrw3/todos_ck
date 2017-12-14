@@ -1,8 +1,12 @@
 # Todo List
 
-##Setup
+## Setup
 
 Fairly basic rails app making use of the webpacker gem to serve react.
+
+Dependencies:
+* Postgres (can be installed and launched via homebrew
+* Yarn (npm can be installed via homebrew, then run `npm install -g yarn`)
 
 The following commands are all that should be needed to get the app in an operable state:
 ```
@@ -10,10 +14,9 @@ bundle install
 rails db:create db:migrate db:seed
 ```
 
-The ony other dependency is Postgres, but you should be able to switch that out with a database of your choosing.
 
-##Architectural Considerations
-###Chosen approach: React via webpacker with single entry point
+## Architectural Considerations
+### Chosen approach: React via webpacker with single entry point
 Pros: 
 * Easy to move quickly
 * Some degree of configuration via Webpacker
@@ -23,8 +26,8 @@ Cons:
 * Can't use turbolinks (due to components rendering on DOMContentLoaded event)
 
 
-###Other Considered Architectures
-####react-rails gem
+### Other Considered Architectures
+#### react-rails gem
 Pros:
 * Gem handles parsing of props
 * Simple
@@ -34,7 +37,7 @@ Cons:
 * Can't use modern import/export syntax
 * No control over npm packages
 
-####Stand-alone react app served by rails
+#### Stand-alone react app served by rails
 Pros:
 * Full configuration options of using something like npm and webpack
 * React could be broken out into entirely separate app easily
@@ -46,7 +49,7 @@ Cons:
 
 _Note : This is the option I would most likely choose on a more complex, long-running product._
 
-####Split frontend and backend
+#### Split frontend and backend
 Pros:
 * Full configuration options of using something like npm and webpack
 * Easier for frontend to consume other services
