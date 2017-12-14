@@ -24,6 +24,7 @@ Pros:
 
 Cons: 
 * Can't use turbolinks (due to components rendering on DOMContentLoaded event)
+* No "real" yarn file or package.json
 
 
 ### Other Considered Architectures
